@@ -1,0 +1,5 @@
+ID,title,status,priority,dueDate,project_ID,assignedTo_ID
+8853153e-77db-4327-8bbe-ce059ab4ef3c,Create Wireframes,Open,3,2025-08-10,54be8d82-bf49-436c-be17-2be84f368058,fd28b5a6-4575-45d6-a5eb-48b10635bf87
+964738f4-1793-4bfb-b6bc-45086a7f3e8c,Develop UI,InProgress,2,2025-08-20,54be8d82-bf49-436c-be17-2be84f368058,fd28b5a6-4575-45d6-a5eb-48b10635bf87
+fd0b1ce9-209d-4f9b-aea7-bd05e4b7159d,Test User Login,Completed,4,2025-09-01,4b246aee-7877-44c4-8878-53d3b25ce4b8,9ad46beb-a5d6-426a-b0b1-0f50d3de1a73
+326dbbc8-7d26-4d13-acf6-9a89a18242e6,Deploy App,Open,1,2025-09-15,4b246aee-7877-44c4-8878-53d3b25ce4b8,8aadca3d-1620-4677-b0c5-3f46c4779aa2
