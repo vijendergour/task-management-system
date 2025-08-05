@@ -22,11 +22,11 @@ entity Users:managed{
 //Tasks schema deatials
 entity Tasks:managed{
     key ID: UUID;
-    title: String(100); //@title : '{i18n>title}';
+    title: String(100) @title : '{i18n>title}';
     
     status: String enum {Open; InProgress; Completed;} ;
-    priority: Integer; //@assert.range:[1,5] @title : '{i18n>priority}';
-    dueDate:Date ;//@title : '{i18n>dueDate}';
+    priority: Integer @assert.range:[1,5] @title : '{i18n>priority}';
+    dueDate:Date @title : '{i18n>dueDate}';
     project: Association to Projects;
     assignedTo:Association to Users;
 }

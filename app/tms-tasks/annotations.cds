@@ -5,22 +5,22 @@ annotate service.Tasks with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'title',
+                Label : 'title- F',
                 Value : title,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'status',
+                Label : 'status F',
                 Value : status,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'priority',
+                Label : 'priority F',
                 Value : priority,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'dueDate',
+                Label : 'dueDate F',
                 Value : dueDate,
             },
         ],
@@ -36,22 +36,22 @@ annotate service.Tasks with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'title',
+            Label : '{i18n>title}',
             Value : title,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'status',
+            Label : '{i18n>status}',
             Value : status,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'priority',
+            Label : 'Priority',
             Value : priority,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'dueDate',
+            Label : '{i18n>dueDate}',
             Value : dueDate,
         },
     ],
