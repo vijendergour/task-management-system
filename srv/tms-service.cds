@@ -1,11 +1,21 @@
 using { tms } from '../db/schema';
 
+
+
 service TMSService  {   
     entity Projects as projection on tms.Projects;
      @odata.draft.enabled
     entity Tasks as projection on tms.Tasks;
     entity Users as projection on tms.Users;
-    @cds.redirection.target
-    view openTask as select from tms.openTask;
+    // @cds.redirection.target
+    // view openTask as select from tms.openTask;
+    // @cds.redirection.target
+    // entity UsersVH as projection on tms.Projects;
 
+    entity StatusVH as projection on tms.StatusVH{
+        key status:String
+    }
+    entity PriorityVH as projection on tms.PriorityVH{
+       key priority: Integer 
+    }
 }

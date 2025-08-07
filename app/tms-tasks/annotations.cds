@@ -5,23 +5,33 @@ annotate service.Tasks with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'title- F',
+                Label : '{i18n>title}',
                 Value : title,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'status F',
+                Label : '{i18n>status}',
                 Value : status,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'priority F',
+                Label : '{i18n>priority}',
                 Value : priority,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'dueDate F',
+                Label : '{i18n>dueDate}',
                 Value : dueDate,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : '{i18n>name}',
+                Value : to_user_ID,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : '{i18n>p_name}',
+                Value : to_project_ID,
             },
         ],
     },
@@ -54,22 +64,32 @@ annotate service.Tasks with @(
             Label : '{i18n>dueDate}',
             Value : dueDate,
         },
+        {
+            $Type : 'UI.DataField',
+            Label : '{i18n>name}',
+            Value : to_user_ID,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : '{i18n>p_name}',
+            Value : to_project_ID,
+        },
     ],
 );
 
 annotate service.Tasks with {
-    project @Common.ValueList : {
+    to_project @Common.ValueList : {
         $Type : 'Common.ValueListType',
         CollectionPath : 'Projects',
         Parameters : [
             {
                 $Type : 'Common.ValueListParameterInOut',
-                LocalDataProperty : project_ID,
+                LocalDataProperty : to_project_ID,
                 ValueListProperty : 'ID',
             },
             {
                 $Type : 'Common.ValueListParameterDisplayOnly',
-                ValueListProperty : 'name',
+                ValueListProperty : 'p_name',
             },
             {
                 $Type : 'Common.ValueListParameterDisplayOnly',
@@ -88,13 +108,13 @@ annotate service.Tasks with {
 };
 
 annotate service.Tasks with {
-    assignedTo @Common.ValueList : {
+    to_user @Common.ValueList : {
         $Type : 'Common.ValueListType',
         CollectionPath : 'Users',
         Parameters : [
             {
                 $Type : 'Common.ValueListParameterInOut',
-                LocalDataProperty : assignedTo_ID,
+                LocalDataProperty : to_user_ID,
                 ValueListProperty : 'ID',
             },
             {
@@ -111,5 +131,36 @@ annotate service.Tasks with {
             },
         ],
     }
+};
+
+annotate service.Tasks with {
+    status @(Common.ValueList : {
+        Label:'{i18n>status}',
+        CollectionPath : 'StatusVH',
+        Parameters : [
+            {
+                $Type : 'Common.ValueListParameterInOut',
+                LocalDataProperty : status,
+                ValueListProperty : 'status',
+                
+            }
+            
+        ],
+    })
+};
+annotate service.Tasks with {
+    priority @(Common.ValueList : {  
+        Label:'{i18n>priority}',      
+        CollectionPath : 'PriorityVH',
+        Parameters : [
+            {
+                $Type : 'Common.ValueListParameterInOut',
+                LocalDataProperty : priority,
+                ValueListProperty : 'priority',
+                
+            }
+            
+        ],
+    })
 };
 
