@@ -16,7 +16,8 @@ entity Tasks:managed{
     key ID: UUID;
     title: String(100) @title : '{i18n>title}';    
     status: String enum {Open; InProgress; Completed;} ;
-    priority: Integer @assert.range:[1,5] @title : '{i18n>priority}';
+    // priority: Integer @assert.range:[1,5] @title : '{i18n>priority}';
+    priority: Integer  @title : '{i18n>priority}';
     dueDate:Date @title : '{i18n>dueDate}';
     to_project: Association to one Projects;
     to_user: Association to one Users;
