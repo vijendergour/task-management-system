@@ -11,10 +11,12 @@ service TMSService {
     // }, }
     entity Tasks      as projection on tms.Tasks
         actions {
-            action test()
+            action test();
+
         };
-        // action getByStatus(status:String) returns many Tasks;
-        action getByStatus();
+
+    action getByStatus(status : String) returns many Tasks;
+
     entity Users      as projection on tms.Users;
     // @cds.redirection.target
     // view openTask as select from tms.openTask;

@@ -39,10 +39,43 @@ module.exports = cds.service.impl(async function () {
     })
 
     // //Filter task by status
-    // this.on('getByStatus', async function (reqest) {
-    //     const { status } = reqest.data
-    //     if (!status) return reqest.error(400, 'Status is required');
-    //     return await SELECT.from(Tasks).where({ status });
-    // })
+    this.on('getByStatus', async function (reqest) {
+        const { status } = reqest.data
+        if (!status) return reqest.error(400, 'Status is required');
+        return await SELECT.from(Tasks).where({ status });
+    })
 
-})
+    // Simple LOGIN Action 
+    // this.on('login', async (req) => {
+    //     const { username, password } = req.data;
+
+    //     if (!username || !password) {
+    //         return req.error(400, 'Username and password are required');
+    //     }
+    //     const loginRecord = await SELECT.one.from(LoginDetails).where({ username });
+    //     if (!loginRecord) {
+    //         return req.error(401, 'Invalid username or password');
+    //     }
+    //     if (password !== loginRecord.password) {
+    //         return req.error(401, 'Invalid username or password');
+    //     }
+
+    //     await UPDATE(LoginDetails)
+    //         .set({ lastLogin: new Date() })
+    //         .where({ ID: loginRecord.ID });
+
+    //     const user = await SELECT.one.from(Users).where({ ID: loginRecord.user_ID });
+
+    //     return {
+    //         message: 'Login successful',
+    //         user: {
+    //             ID: user.ID,
+    //             name: user.name,
+    //             email: user.email,
+    //             role: user.role
+    //         }
+    //     };
+    // });
+
+});
+
