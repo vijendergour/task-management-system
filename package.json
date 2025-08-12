@@ -18,9 +18,21 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-tms-tasks": "cds watch --open tms-tasks/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-tms-tasks": "cds watch --open tms-tasks/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-project_info": "cds watch --open project_info/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-tms-user": "cds watch --open tms-user/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "sapux": [
-    "app/tms-tasks"
-  ]
+    "app/tms-tasks",
+    "app/project_info",
+    "app/tms-user"
+  ],
+  "cds":{
+	"requires":{
+		"[sqlite]":{
+			"db":"sqlite",
+			"auth":"dummy"
+		}
+	}
+}
 }

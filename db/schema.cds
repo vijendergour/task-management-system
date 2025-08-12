@@ -8,7 +8,9 @@ entity Projects : managed {
         description : String;
         startDate   : Date;
         endDate     : Date;
-        to_task     : Composition of many Tasks
+        // to_task     : Composition of many Tasks
+        //                   on to_task.to_project = $self;
+        to_task     : Association to  many Tasks
                           on to_task.to_project = $self;
 }
 

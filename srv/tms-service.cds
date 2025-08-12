@@ -1,28 +1,19 @@
 using {tms} from '../db/schema';
-
-
 service TMSService {
-    entity Projects   as projection on tms.Projects;
-
     @odata.draft.enabled
+    entity Projects   as projection on tms.Projects;
     // @Capabilities : { DeleteRestrictions : {
     //     $Type : 'Capabilities.DeleteRestrictionsType',
     //     Deletable:false
     // }, }
+    @odata.draft.enabled
     entity Tasks      as projection on tms.Tasks
         actions {
             action test();
-
         };
-
     action getByStatus(status : String) returns many Tasks;
-
-    entity Users      as projection on tms.Users;
-    // @cds.redirection.target
-    // view openTask as select from tms.openTask;
-    // @cds.redirection.target
-    // entity UsersVH as projection on tms.Projects;
-
+    @odata.draft.enabled
+    entity Users      as projection on tms.Users;   
     entity StatusVH   as
         projection on tms.StatusVH {
             key status : String
@@ -33,3 +24,7 @@ service TMSService {
             key priority : Integer
         }
 }
+// @cds.redirection.target
+    // view openTask as select from tms.openTask;
+    // @cds.redirection.target
+    // entity UsersVH as projection on tms.Projects;

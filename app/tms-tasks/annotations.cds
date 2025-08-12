@@ -27,7 +27,7 @@ annotate service.Tasks with @(
             // {
             //     $Type: 'UI.DataField',
             //     Label: '{i18n>name}',
-            //     Value: to_user_ID,
+            //     Value: to_user_ID,  
             // },
             // {
             //     $Type: 'UI.DataField',
@@ -158,16 +158,20 @@ annotate service.Tasks with {
 };
 
 annotate service.Tasks with {
-    priority @(Common.ValueList: {
-        Label         : '{i18n>priority}',
-        CollectionPath: 'PriorityVH',
-        Parameters    : [{
-            $Type            : 'Common.ValueListParameterInOut',
-            LocalDataProperty: priority,
-            ValueListProperty: 'priority',
 
+    priority @(
+        Common.ValueListWithFixedValues,
+        Common.ValueList: {
+            Label         : '{i18n>priority}',
+            CollectionPath: 'PriorityVH',
+            Parameters    : [{
+                $Type            : 'Common.ValueListParameterInOut',
+                LocalDataProperty: priority,
+                ValueListProperty: 'priority',
+
+            }
+
+            ],
         }
-
-        ],
-    })
+    )
 };
